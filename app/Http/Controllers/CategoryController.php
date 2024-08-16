@@ -8,6 +8,10 @@ class CategoryController extends Controller
 {
     //
     public function index() {
-        return "Category";
+        return view('index');
+    }
+
+    public function create() {
+        return view('create');
     }
 }
