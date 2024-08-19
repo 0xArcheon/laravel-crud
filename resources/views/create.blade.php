@@ -7,17 +7,17 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <div class="text-xl font-bold text-center mt-10">Category</div>
+    <div class="text-xl font-bold text-center mt-5">Category</div>
+    @if (session('status')) 
+        <div class="text-sm text-green-950 font-semibold text-center mt-10 p-2 bg-green-200 rounded-md ml-10 mr-10">
+                {{(session('status'))}}
+        </div>
+    @endif 
     <div class="p-10 flex w-full justify-end px-96">
         <div class="flex justify-end flex-col">
         <a href="{{ url('category') }}" >
             <button class="text-white bg-purple-700 text-lg rounded-xl pl-5 pr-5 pt-2 pb-2 hover:bg-purple-800" >Go Back</button>
         </a>
-        @if (session('status'))
-            <div>
-                {{(session('status'))}}
-            </div>
-        @endif
         </div>   
     </div>
     <div class="flex justify-center items-center w-full px-72 text-lg ">
@@ -35,7 +35,7 @@
             </div>
             <div class="mb-2 flex gap-1">
                 <label for="isActive">Is Active</label>
-                <input type="checkbox" name="is_active" value="{{old('name')}}" {{ old('is_active') == true ? checked: '' }}
+                <input type="checkbox" name="is_active" value="1" {{ old('is_active') ? 'checked' : '' }}
                 class="h-6 w-6 border border-gray-300 rounded-md checked:bg-blue-600 checked:border-transparent focus:outline-none 
                 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer ml-2 mt-1"/>
             </div>

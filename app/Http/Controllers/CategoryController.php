@@ -9,7 +9,8 @@ class CategoryController extends Controller
 {
     //
     public function index() {
-        return view('index');
+        $categories = Category::get();
+        return view('index', compact('categories'));
     }
 
     public function create() {
