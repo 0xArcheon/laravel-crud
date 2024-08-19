@@ -16,6 +16,7 @@ use App\Http\Controllers\CategoryController;
 
 Route::get("/category", [CategoryController::class, 'index']);
 Route::get("/category/create", [CategoryController::class, 'create']);
+Route::post("/category/store", [CategoryController::class, 'store']);
 
 Route::get('/', function () {
     return view('welcome');
