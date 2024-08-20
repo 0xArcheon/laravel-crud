@@ -8,8 +8,10 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
-    <div class="text-xl font-bold text-center mt-10">Category</div>
+<body class="bg-gradient-to-r from-yellow-50 to-teal-100">
+    <div
+        class="text-xl font-bold text-center mt-10 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+        Category</div>
     <div class="p-10 w-full justify-end px-96">
         <div class="flex justify-end flex-col">
             <a href="{{ url('category/create') }}"
@@ -44,13 +46,12 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-700">
                                 <a href="{{ url('category/' . $item->id . '/edit') }}"
                                     class="bg-sky-200 font-bold px-3 py-1 rounded-md m-1">Edit</a>
-                                <a href="{{ url('category/' . $item->id . '/edit') }}"
+                                <a href="{{ url('category/' . $item->id . '/delete') }}"
                                     class="bg-red-200 font-bold px-3 py-1 rounded-md m-1">Delete</a>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
-
             </table>
         </div>
     </div>

@@ -8,8 +8,10 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
-    <div class="text-xl font-bold text-center mt-5">Category</div>
+<body class="bg-gradient-to-r from-indigo-50 to-rose-100">
+    <div
+        class="text-xl font-bold text-center mt-5 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+        Category</div>
     @if (session('status'))
         <div class="text-sm text-green-950 font-semibold text-center mt-10 p-2 bg-green-200 rounded-md ml-10 mr-10">
             {{ session('status') }}

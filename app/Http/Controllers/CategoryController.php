@@ -55,4 +55,9 @@ class CategoryController extends Controller
         return redirect()->back()->with('status','Category updated successfully');
     }
 
+    public function delete(int $id) {
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect()->back()->with('status','Category deleted successfully');
+    }
 }
