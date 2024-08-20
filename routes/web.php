@@ -17,6 +17,8 @@ use App\Http\Controllers\CategoryController;
 Route::get("/category", [CategoryController::class, 'index']);
 Route::get("/category/create", [CategoryController::class, 'create']);
 Route::post("/category/store", [CategoryController::class, 'store']);
+Route::get("/category/{id}/edit", [CategoryController::class, 'edit']); //For retrieving a particular category
+Route::put("/category/{id}/update", [CategoryController::class, 'update']); //For updating a particular category
 
 Route::get('/', function () {
     return view('welcome');

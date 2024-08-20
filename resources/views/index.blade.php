@@ -12,10 +12,8 @@
     <div class="text-xl font-bold text-center mt-10">Category</div>
     <div class="p-10 w-full justify-end px-96">
         <div class="flex justify-end flex-col">
-            <a href="{{ url('category/create') }}">
-                <button
-                    class="text-white bg-purple-700 text-lg rounded-xl pl-5 pr-5 pt-2 pb-2 hover:bg-purple-800">Add</button>
-            </a>
+            <a href="{{ url('category/create') }}"
+                class="text-white w-fit bg-purple-700 text-lg rounded-xl pl-5 pr-5 pt-2 pb-2 hover:bg-purple-800">Add</a>
         </div>
         <div class="mt-4">
             <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
@@ -44,8 +42,10 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-700">
                                 {{ $item->is_active == true ? 'Active' : 'Inactive' }}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-700">
-                                <button class="bg-sky-300 font-bold px-3 py-1 rounded-md m-1">Edit</button>
-                                <button class="bg-red-300 font-bold px-3 py-1 rounded-md m-1">Delete</button>
+                                <a href="{{ url('category/' . $item->id . '/edit') }}"
+                                    class="bg-sky-200 font-bold px-3 py-1 rounded-md m-1">Edit</a>
+                                <a href="{{ url('category/' . $item->id . '/edit') }}"
+                                    class="bg-red-200 font-bold px-3 py-1 rounded-md m-1">Delete</a>
                             </td>
                         </tr>
                     @endforeach
